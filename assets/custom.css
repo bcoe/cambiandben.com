@@ -1,0 +1,41 @@
+/*
+
+CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles here instead of style.css so it
+is easier to update the theme. Simply copy an existing
+style from style.css to this file, and modify it to
+your liking.
+
+*/
+
+#countdown {
+	font-size: 25pt;
+	padding: 25px 5px 5px 5px;
+	width: 100%;
+	height: 20px;
+}
+
+#countdown .label {
+	position: absolute;
+	top: -15px;
+	left: 4px;
+	text-transform: uppercase;
+	font-size: 10pt;
+}
+
+#countdown .wrapper {
+	background: url(images/bullet.png) right center no-repeat;
+	background-size: 16px 16px;
+	margin:0;
+	padding: 0 18px 0 2px;
+	display: inline;
+	position: relative;
+}
+
+#countdown .wrapper:last-child {
+	background: none;
+}

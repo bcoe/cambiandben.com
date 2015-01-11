@@ -1,0 +1,480 @@
+
+/* For all Mobile phones with Screen Width < 768px */
+@media only screen and (max-width: 767px) {
+	body {
+		background-image:url(images/bg/pattern_1_blue.png) !important;
+		background-color: #c7b4cb !important;
+		background-repeat:repeat !important}
+
+	.body_wrap {
+		padding-top:0px;
+		background:none !important;}
+
+	/* Footer */
+	footer .container {
+		min-height:30px;
+		padding:20px 0 20px;
+		width:276px;}
+
+	.copyright .icon_heart {
+		display:block;
+		width:100%;
+		margin:3px 0;}
+
+	.comment-body {
+		padding:20px 0;}
+
+	.comment-entry {
+		padding-top:0;
+		font-size:13px}
+
+    #topmenu{
+        display: none;
+    }
+}
+/* For iPads */
+@media only screen and (device-width: 768px) {
+	body {
+		background-image:url(images/bg/pattern_1_blue.png) !important;
+		background-color: #c7b4cb !important;
+		background-repeat:repeat !important}
+}
+
+/* For iPhone Portrait with Screen Width 320px */
+@media only screen and (min-width: 280px) and (max-width: 479px) {
+
+	body {
+		background-image:url(images/bg/pattern_1_blue.png) !important;
+		background-color: #c7b4cb !important;
+		background-repeat:repeat !important}
+
+	.body_wrap {
+		padding-top:0px;
+		background:none !important;}
+
+	.col {
+		margin-left: 0px;
+		margin-right: 0px;}
+
+	/* Columns inside ROW */
+	.row .col_1_2 {width:256px}
+	.row .col_1_3 {width:256px}
+	.row .col_2_3 {width:256px}
+
+	/* main content area */
+	.container,
+	.main_outer {
+		width:310px;}
+
+	.main_top {
+		background:url(images/main_bg_tb_320.png) center 0 no-repeat;
+		height:37px}
+
+	.main_bot {
+		background:url(images/main_bg_tb_320.png) center -37px no-repeat;
+		height:37px}
+
+	.main_mid {
+		background:url(images/main_bg_mid_320.png) center center repeat-y;
+		padding:0 27px; /* width 256px */
+		min-height:300px}
+
+	/* header */
+	.head_title {
+		height:65px}
+
+	.head_title h1, .head_title strong {
+		padding:12px 0 5px;
+		font-size:17px;}
+
+	.sub_title {
+		font-size:13px;}
+
+	.head_names {
+		height:81px}
+
+	.head_name_left, .head_name_right {
+		width:100px;
+		height:86px;
+		overflow:hidden}
+
+	.head_name_left {
+		left:0px}
+	.head_name_right {
+		right:0px}
+
+	.head_name {
+		padding:5px 4px 0 4px;
+		height:70px;
+		margin-top:5px;}
+
+	.head_name strong {
+		font-size:44px;
+		letter-spacing:1px;}
+
+	.head_name em {
+		padding-top:5px;
+		font-size:13px;}
+
+	.head_amp {
+		display:block;
+		width:50px;
+		height:49px;
+		padding-top:15px}
+
+	.ribbon_left, .ribbon_right {
+		top:10px;}
+
+	/* Framed boxes */
+	.frame_big {
+		width:226px;
+		height:96px;}
+
+	.img_tl,
+	.img_tr,
+	.img_bl,
+	.img_br {
+		width:22px;
+		height:22px;
+		background:url(images/corner_mid.png) no-repeat}
+
+	.img_tl {
+		top:-5px;
+		left:-5px}
+	.img_tr {
+		top:-5px;
+		right:-5px}
+	.img_bl {
+		bottom:-5px;
+		left:-5px}
+	.img_br {
+		bottom:-5px;
+		right:-5px}
+
+	.text_center, .text_big {
+		font-size:14px;
+		width:246px}
+
+	.social_box a {
+		margin:0;}
+
+	/* bottom box content */
+	.bot_box {
+		font-size:14px;}
+
+	.bot_box .box_icon,
+	.hotel-item .box_icon {
+		margin:0 14px 0 0}
+	.bot_box p {
+		padding-top:10px}
+
+	.hotel-item .box_icon {
+		margin:10px 0 0 20px}
+
+	.hotels_list h3 a {
+		display:block;}
+
+	.hotel-item .item_descr {
+		width:190px;
+		font-size:12px;}
+
+	/* gallery slider */
+	.gallery-slider .frame_box,
+	.gallery-slider .omega {
+		margin:5px  auto 15px  auto;
+		float:none;}
+	.gallery-slider .slide-item {
+		width:256px}
+
+	/* posts list */
+	.posts_list, .pages_list {
+		width:256px;}
+
+	.post-item {
+		margin:30px auto 50px auto;}
+
+	.post-title h2,
+	.post-title h1 {
+		font-size:22px;}
+
+	.post-date {
+		margin-right:0}
+
+	.link-comments {
+		display:block;
+		clear:both;
+		float:right;
+		margin-top:5px}
+
+	/* Bridesmaid list */
+	.page_item {
+		text-align:center;
+		padding-bottom:10px;
+		margin-top:23px;}
+
+	.page_item .frame_box {
+		margin:0 auto 10px auto;
+		float:none;}
+
+	.page_item_descr {
+		clear:both;}
+
+	.entry .register_name {
+		padding:0 0 20px 0}
+
+	/* rounded mages */
+	.round_image {
+		margin:0 15px}
+
+	/* comments */
+	.comment-avatar {
+		margin-right:10px}
+	.comment-avatar,
+	.comment-avatar .avatar img {
+		width:30px;
+		height:30px;}
+
+	.comment-text {
+		width:216px}
+
+	/* Comment form / Contact form */
+	.add-comment {
+		padding:20px 0;
+		width:246px;}
+
+	.comment-form .inputtext,
+	.comment-form .textarea,
+	.comment-form .select_styled {
+		width:226px;}
+
+	.comment-form .input_full {
+		width:226px}
+
+	.comment-form .rowRadio,
+	.comment-form .rowCheckbox {
+		width:214px;}
+
+	.comment-form .input_full .rowRadio,
+	.comment-form .input_full .rowCheckbox {
+		width:246px;}
+
+	.input_styled.inlinelist {
+		width:226px;}
+	.input_styled.inlinelist .rowRadio {
+		margin-left:0px}
+
+	.comment-form .select_styled {
+		width:246px;}
+
+	.comment-form .textarea {
+		width:226px;}
+}
+
+/* For iPhone Landscape with Screen Width 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	.col {
+		margin-left: 7px;
+		margin-right: 7px;}
+
+	/* Columns inside ROW */
+	.row .col_1_2 {width:193px}
+	.row .col_1_3 {width:124px}
+	.row .col_2_3 {width:262px}
+
+	/* main content area */
+	.container,
+	.main_outer {
+		width:468px;}
+
+	.main_top {
+		background:url(images/main_bg_tb_480.png) center 0 no-repeat;
+		height:40px}
+
+	.main_bot {
+		background:url(images/main_bg_tb_480.png) center -40px no-repeat;
+		height:40px}
+
+	.main_mid {
+		background:url(images/main_bg_mid_480.png) center center repeat-y;
+		padding:0 34px; /* width 400px */
+		min-height:300px}
+
+	/* header */
+	.head_title {
+		height:65px}
+
+	.head_title h1, .head_title strong {
+		padding:12px 0 5px;
+		font-size:17px;}
+
+	.sub_title {
+		font-size:13px;}
+
+	.head_names {
+		height:96px}
+
+	.head_name_left, .head_name_right {
+		width:150px;
+		height:96px;
+		overflow:hidden;}
+
+	.head_name_left {
+		left:5px}
+	.head_name_right {
+		right:5px}
+
+	.head_name {
+		padding:5px 5px 0 5px;
+		height:80px;
+		margin-top:5px;}
+
+	.head_name strong {
+		font-size:54px;
+		letter-spacing:1px;}
+
+	.head_name em {
+		padding-top:5px;
+		font-size:13px;}
+
+	.head_amp {
+		display:block;
+		width:70px;
+		height:68px;
+		padding-top:14px}
+
+	.ribbon_left, .ribbon_right {
+		top:10px;}
+	.ribbon_left {
+		left:-88px;}
+	.ribbon_right {
+		right:-88px;}
+
+	/* topmenu */
+    #topmenu-select {
+        padding-top: 5px;
+    }
+	#topmenu-select .select_styled {
+		width:240px;
+		margin:0 0 0 80px;}
+
+	.dropdown li {
+		margin:0 4px;}
+
+	.dropdown .menu-level-0.first {
+		margin-left:0}
+	.dropdown .menu-level-0.last {
+		margin-right:0}
+
+	/* Framed boxes */
+	.frame_big {
+		width:368px;
+		height:157px;}
+
+	/* bottom box content */
+	.bot_box {
+		font-size:14px;}
+
+	.bot_box .box_icon,
+	.hotel-item .box_icon {
+		margin:0 14px 0 0}
+
+	.hotel-item .box_icon {
+		margin:10px 0 0 20px}
+
+	.hotel-item .item_descr {
+		width:326px}
+
+	/* gallery slider */
+	.gallery-slider .frame_box {
+		margin:5px 25px 20px 24px;}
+	.gallery-slider .slide-item {
+		width:400px}
+
+	/* posts list */
+	.posts_list, .pages_list {
+		width:400px;}
+
+	.post-title h2,
+	.post-title h1 {
+		font-size:22px;}
+
+	.post-date {
+		margin-right:10px}
+
+	/* Bridesmaid list */
+	.page_item h2,
+	.entry .page_item h2 {
+		font-size:16px;}
+	.page_item h2 span {
+		font-size:14px;}
+
+	.page_item .frame_left {
+		margin:5px 10px 0 0}
+	.page_item .frame_right {
+		margin:5px 0 0 10px}
+
+	.entry .register_name {
+		padding:5px 0 0 0;
+		line-height:1em;}
+
+	.entry .register_name a {
+		margin-top:7px;
+		display:inline-block;}
+
+	/* rounded mages */
+	.round_image {
+		margin:0 10px}
+
+	/* comments */
+	.comment-avatar {
+		margin-right:15px}
+
+	.comment-text {
+		width:337px}
+
+	/* Comment form / Contact form */
+	.add-comment {
+		padding:20px 0;
+		width:400px;}
+
+	.comment-form .row {
+		margin-right:20px}
+
+	.comment-form .inputtext,
+	.comment-form .textarea,
+	.comment-form .select_styled {
+		width:168px;}
+
+	.comment-form .input_full {
+		width:378px}
+
+	.comment-form .rowRadio,
+	.comment-form .rowCheckbox {
+		width:190px;}
+
+	.comment-form .input_full .rowRadio,
+	.comment-form .input_full .rowCheckbox {
+		width:400px;}
+
+	.input_styled.inlinelist {
+		width:378px;}
+	.input_styled.inlinelist .rowRadio {
+		margin-left:25px}
+
+	.comment-form .select_styled {
+		width:188px;}
+
+	.comment-form .textarea {
+		width:378px;}
+
+}
+
+@media only screen and (min-width: 768px) {
+    #topmenu-select{
+        display: none;
+    }
+    #topmenu{
+        display: block;
+    }
+}

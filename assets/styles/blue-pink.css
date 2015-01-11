@@ -1,0 +1,62 @@
+::-moz-selection { 
+	background: #e261aa;}
+::selection {
+	background: #e261aa;}
+
+h1 span, h2 span, h3 span ,h4 span, h5 span, h6 span,
+a:hover, a:focus,
+.sub_title {
+	color:#d4418b}
+
+.entry a:hover,
+.entry .link-more {
+	color:#e261aa}
+
+input[type="reset"],
+input[type="submit"],
+input[type="button"], 
+button,
+.button_link,
+.btn-submit, input.btn-submit,
+.comment-form .btn-submit {
+	background:url(../images/button_bg.png) 0 -60px repeat-x #d4418b;
+	text-shadow:0 1px 1px #6c0b3c;
+	border:1px solid #9f1e5f;}
+
+.ribbon_left, .ribbon_right {
+	background-image:url(blue-pink/ribbon_top.png);}
+
+a, a:visited,
+.dropdown li:hover a,
+.dropdown .current-menu-item a,
+.dropdown .current-menu-ancestor a,
+.dropdown li ul li:hover a,
+.dropdown li:hover li ul li:hover a,
+.dropdown .current-menu-ancestor .current-menu-item a,
+.dropdown .current-menu-ancestor .current-menu-ancestor a,
+.dropdown .current-menu-ancestor .current-menu-ancestor .current-menu-item a,
+.bot_box a,
+.entry a,
+.post-title h2 a:hover,
+.post-title h1 a:hover,
+.post-author .author,
+.comment-author,
+.comment-date {
+	color:#3fb6d5;} 
+
+.icon_map {
+	background-image:url(blue-pink/icons/icon_map.png)}
+.icon_gift {
+	background-image:url(blue-pink/icons/icon_gift.png)}
+.icon_rsvp {
+	background-image:url(blue-pink/icons/icon_rsvp.png)}
+
+.link-reply {
+	color:#e261aa;}
+
+.tf_pagination .page_prev,
+.tf_pagination .page_next {
+	background-image:url(blue-pink/tf_pagination_arrows.png)}
+
+.cusel .cuselActive {
+	color: #d4418b !important;}

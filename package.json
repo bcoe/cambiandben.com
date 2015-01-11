@@ -1,0 +1,29 @@
+{
+  "name": "cambiandben.com",
+  "version": "1.0.0",
+  "description": "the website for Cambi and Ben's wedding.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bcoe/cambiandben.com.git"
+  },
+  "keywords": [
+    "wedding",
+    "ben",
+    "cambi"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcoe/cambiandben.com/issues"
+  },
+  "homepage": "https://github.com/bcoe/cambiandben.com",
+  "dependencies": {
+    "dotenv": "^0.4.0",
+    "handlebars": "^2.0.0",
+    "restify": "^2.8.4"
+  }
+}

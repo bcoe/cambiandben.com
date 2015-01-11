@@ -1,0 +1,126 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Ben and Cambi are getting married</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="http://fonts.googleapis.com/css?family=Copse|Six+Caps|Source+Sans+Pro:400,700" rel="stylesheet">
+
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- favicon.ico and apple-touch-icon.png -->
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-57x57-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114-iphone4.png">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="screen.css">
+<link rel="stylesheet" href="styles/beige-turqoise.css">
+<!-- custom CSS -->
+<link rel="stylesheet" href="custom.css">
+
+<!-- main JS libs  -->
+<script src="js/libs/modernizr-2.5.3.min.js"></script>
+<script src="js/libs/respond.min.js"></script>
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/countdown.js"></script>
+
+<!-- scripts  -->
+<script src="js/jquery.easing.1.3.min.js"></script>
+<script src="js/general.js"></script>
+
+<!-- shortcode: Lightbox prettyPhoto -->
+<link rel="stylesheet" href="css/prettyPhoto.css">
+<script src="js/jquery.prettyPhoto.js"></script>
+
+<!-- carousel -->
+<script src="js/jquery.carouFredSel.min.js"></script>
+
+</head>
+<body>
+
+<div class="body_wrap">
+  <div class="main_outer">
+ 	  <div class="main_top"></div>
+     <div class="main_mid">
+
+        <!-- header -->
+        <div class="header">
+
+        	<div class="head_title">
+          	<h1>We&rsquo;re Getting Married</h1>
+            <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=Cambi%20%26%20Ben's%20Wedding&location=Mann%20Family%20Farm%2C%20605%20Horseshoe%20Hill%20Road%2C%20Bolinas%2C%20California%2094924&details=http%3A%2F%2Fwww.cambiandben.com&dates=20151023T230000Z/20151023T290000Z" target="_blank"><p class="sub_title">Friday, 23<sup>rd</sup> October 2015</p></a>
+          </div>
+
+          <div class="head_names">
+          	<div class="head_name_left">
+          	  <span class="head_name">
+              	<strong>CAMBI</strong> <em>EVERS-EVERETTE</em>
+              </span>
+              </div>
+              <span class="head_amp"><img src="styles/beige-turqoise/head_amp.png" width="125" height="122" alt=""></span>
+              <div class="head_name_right">
+              <span class="head_name">
+              	<strong>BENJAMIN</strong> <em>COE</em>
+              </span>
+            </div>
+
+            <span class="ribbon_left"></span>
+            <span class="ribbon_right"></span>
+          </div>
+
+        </div>
+        <!-- header -->
+
+        <!-- topmenu -->
+		    <div class="topmenu_line_top"></div>
+        <nav id="topmenu">
+          <ul class="dropdown">
+            <li class="menu-level-0{{#if isIndex}} current-menu-ancestor{{/if}}"><a href="/"><span>HOME</span></a></li>
+          	<li class="menu-level-0{{#if isDayOf}} current-menu-ancestor{{/if}}"><a href="/dayof"><span>DAY OF</span></a></li>
+            <li class="menu-level-0{{#if isAccomodation}} current-menu-ancestor{{/if}}"><a href="/accomodation"><span>ACCOMODATION</span></a></li>
+            <li class="menu-level-0  {{#if isRSVP}}current-menu-item{{/if}}"><a href="/rsvp"><span>RSVP</span></a></li>
+            <li class="menu-level-0 {{#if isRegistry}}current-menu-item{{/if}}"><a href="/registry"><span>REGISTRY</span></a></li>
+            <li class="menu-level-0 {{#if isGallery}}current-menu-item{{/if}}"><a href="/gallery"><span>GALLERY</span></a></li>
+          </ul>
+        </nav>
+        <div class="topmenu_line_bot"></div>
+       <!--/ topmenu -->
+
+       <!-- content -->
+	     <div class="content post-detail">
+
+        	<div class="entry">
+            {{#if isIndex}}{{> indexBody}}{{/if}}
+            {{#if isDayOf}}{{> dayOfBody}}{{/if}}
+            {{#if isAccomodation}}{{> accomodationBody}}{{/if}}
+            {{#if isRSVP}}{{> rsvpBody}}{{/if}}
+            {{#if isRegistry}}{{> registryBody}}{{/if}}
+            {{#if isGallery}}{{> galleryBody}}{{/if}}
+          </div>
+          <!--/ content -->
+
+      </div>
+    <div class="main_bot"></div>
+  </div>
+<!--/ container -->
+
+  <footer>
+  	<div class="container">
+     		<p class="copyright">The future estate of Cambi and Ben<span class="icon_heart">&hearts;</span> <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=Cambi%20%26%20Ben's%20Wedding&location=Mann%20Family%20Farm%2C%20605%20Horseshoe%20Hill%20Road%2C%20Bolinas%2C%20California%2094924&details=http%3A%2F%2Fwww.cambiandben.com&dates=20151023T230000Z/20151023T290000Z" target="_blank">October 23<sup>rd</sup> 2015</a></p>
+  	</div>
+  </footer>
+
+  </div>
+</body>
+</html>

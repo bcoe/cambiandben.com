@@ -1,0 +1,67 @@
+<!-- gallery slider -->
+
+<div class="gallery-slider">
+
+  <div class="gallery-container" id="gallery1">
+
+<div class="slide-item">
+
+    <div class="frame_box frame_small">
+       <a href="images/photos/cambi1.jpg" data-rel="prettyPhoto[mg_1]"><img src="images/photos/cambi1_gallery.jpg" width="135" height="93" alt=""></a>
+      <span class="img_tl"></span><span class="img_tr"></span><span class="img_bl"></span><span class="img_br"></span>
+    </div>
+
+            <div class="frame_box frame_small">
+       <a href="images/photos/ben1.jpg" data-rel="prettyPhoto[mg_1]"><img src="images/photos/ben2_gallery.jpg" width="135" height="93" alt=""></a>
+      <span class="img_tl"></span><span class="img_tr"></span><span class="img_bl"></span><span class="img_br"></span>
+    </div>
+
+            <div class="frame_box frame_small">
+       <a href="images/photos/cambi2.jpg" data-rel="prettyPhoto[mg_1]"><img src="images/photos/cambi2_gallery.jpg" width="135" height="93" alt=""></a>
+      <span class="img_tl"></span><span class="img_tr"></span><span class="img_bl"></span><span class="img_br"></span>
+    </div>
+
+            <div class="frame_box frame_small">
+       <a href="images/photos/cambi2.jpg" data-rel="prettyPhoto[mg_1]"><img src="images/photos/ben1_gallery.jpg" width="135" height="93" alt=""></a>
+      <span class="img_tl"></span><span class="img_tr"></span><span class="img_bl"></span><span class="img_br"></span>
+    </div>
+
+            <div class="clear"></div>
+      </div>
+        <!--/ slide -->
+  </div>
+
+  <div class="clear"></div>
+
+<!--    <div class="tf_pagination">
+  <div class="inner">
+      <a class="page_prev" id="gallery1_prev" href="#"><span>prev</span></a>
+      <div class="gallery_pag" id="gallery1_pag"></div>
+        <a class="page_next" id="gallery1_next" href="#"><span>next</span></a>
+      </div>
+    </div> -->
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+  $('#gallery1').carouFredSel({
+    pagination : "#gallery1_pag",
+    prev : "#gallery1_prev",
+    next : "#gallery1_next",
+    auto: false,
+    circular: false,
+    infinite: true,
+    scroll: {
+    fx: 'fade',
+    duration: 300
+  }
+  });
+});
+</script>
+
+<!--/ gallery slider -->
+
+
+
+<div class="clear"></div>
+</div>
