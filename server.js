@@ -53,8 +53,8 @@ Server.prototype._createRoutes = function() {
   server.get('/admin', function(req, res, next) { _this.admin(req, res, next); });
 
   // RSVP guest-list management.
-  server.post('/guest', function(req, res, next) { _this.addGuest(req, res, next); });
   server.post('/guest/:email', function(req, res, next) { _this.lookupGuest(req, res, next); });
+  server.post('/guest', function(req, res, next) { _this.addGuest(req, res, next); });
   server.del('/guest/:email', function(req, res, next) { _this.deleteGuest(req, res, next); });
   server.get('/guest', function(req, res, next) { _this.getGuests(req, res, next); });
   server.get('/guest/csv', function(req, res, next) { _this.getCSV(req, res, next); });
