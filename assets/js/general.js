@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-// Smooth Scrolling of ID anchors	
+// Smooth Scrolling of ID anchors
   function filterPath(string) {
   return string
     .replace(/^\//,'')
@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
   }
   var locationPath = filterPath(location.pathname);
   var scrollElem = scrollableElement('html', 'body');
- 
+
   $('a[href*=#].anchor').each(function() {
     $(this).click(function(event) {
     var thisPath = filterPath(this.pathname) || locationPath;
@@ -25,9 +25,9 @@ jQuery(document).ready(function($) {
           });
       }
     }
-   });	
+   });
   });
- 
+
   // use the first element that is "scrollable"
   function scrollableElement(els) {
     for (var i = 0, argLength = arguments.length; i <argLength; i++) {
@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
     }
     return [];
   }
-  
+
 // Remove links outline in IE 7
 	$("a").attr("hideFocus", "true").css("outline", "none");
 
@@ -57,43 +57,36 @@ jQuery(document).ready(function($) {
 	if ($("div,p").hasClass("input_styled")) {
 		$(".input_styled input").customInput();
 	}
-	
-// resonsive 			
-	var screenRes = $(window).width();   
+
+// resonsive
+	var screenRes = $(window).width();
 	if (screenRes > 600) {
 		$(".slide-item .frame_box:nth-child(3n)").addClass("omega");
-	}	
-		
+	}
+
 	$(".dropdown ul").parent("li").addClass("parent");
 	$(".dropdown li:first-child").addClass("first");
 	$(".dropdown li:last-child").addClass("last");
-	$(".dropdown li:only-child").removeClass("last").addClass("only");	
-	
+	$(".dropdown li:only-child").removeClass("last").addClass("only");
+
 	$(".dropdown li").hover(function(){
 		var dropDown = $(this).children("ul");
 		var ulWidth = dropDown.width();
 		var liWidth = $(this).width();
 		var posLeft = (liWidth - ulWidth)/2;
-		dropDown.css("left",posLeft);		
-	});	
-	
+		dropDown.css("left",posLeft);
+	});
+
 // cols
 	$(".row .col:first-child").addClass("alpha");
-	$(".row .col:last-child").addClass("omega"); 
-	
+	$(".row .col:last-child").addClass("omega");
+
 // preload images plugin
 /*  v1.4 https://github.com/farinspace/jquery.imgpreload */
 if("undefined"!=typeof jQuery){(function(a){a.imgpreload=function(b,c){c=a.extend({},a.fn.imgpreload.defaults,c instanceof Function?{all:c}:c);if("string"==typeof b){b=new Array(b)}var d=new Array;a.each(b,function(e,f){var g=new Image;var h=f;var i=g;if("string"!=typeof f){h=a(f).attr("src");i=f}a(g).bind("load error",function(e){d.push(i);a.data(i,"loaded","error"==e.type?false:true);if(c.each instanceof Function){c.each.call(i)}if(d.length>=b.length&&c.all instanceof Function){c.all.call(d)}a(this).unbind("load error")});g.src=h})};a.fn.imgpreload=function(b){a.imgpreload(this,b);return this};a.fn.imgpreload.defaults={each:null,all:null}})(jQuery)}
 
 	$.imgpreload([
-	'/wedding/PurpleOrange/images/dropdown_sprite.png',
-	'/wedding/PurpleOrange/images/dropdown_sprite2.png',
-	'/wedding/PurpleOrange/images/corner_big.png',
-	'/wedding/PurpleOrange/images/corner_mid.png',
-	'/wedding/PurpleOrange/images/corner_small.png'
 	]);
-
-	
 
 // Topmenu <ul> replace to <select>
     $(function() {
@@ -181,7 +174,7 @@ if("undefined"!=typeof jQuery){(function(a){a.imgpreload=function(b,c){c=a.exten
         $('a[data-rel]').each(function() {
 			$(this).attr('rel', $(this).data('rel'));
 		});
-		$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false});	
+		$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false});
     }
-	
+
 });

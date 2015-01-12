@@ -784,7 +784,6 @@ p.wp-caption-text, .frame_caption {
 
 .dropdown li ul li {
 	display:block;
-	background:url(images/dropdown_sprite2.png) 0 0 repeat-y;
 	width: 114px;
 	margin:0;
 	height:auto;
@@ -896,8 +895,7 @@ footer .container {
 	width:27px;
 	height:27px;
 	position:absolute;
-	z-index:2;
-	background:url(images/corner_big.png) no-repeat}
+	z-index:2;}
 
 .img_tl {
 	background-position:0 0 !important;
@@ -927,8 +925,7 @@ footer .container {
 .frame_mid .img_bl,
 .frame_mid .img_br {
 	width:22px;
-	height:22px;
-	background:url(images/corner_mid.png) no-repeat}
+	height:22px;}
 
 .frame_mid .img_tl {
 	top:-5px;
@@ -954,8 +951,7 @@ footer .container {
 .frame_small .img_bl,
 .frame_small .img_br {
 	width:20px;
-	height:20px;
-	background:url(images/corner_small.png) no-repeat}
+	height:20px;}
 
 .frame_small .img_tl {
 	top:-4px;
@@ -1649,9 +1645,6 @@ footer .container {
 
 .current-menu-item {
     background: none;
-}
-.dropdown li ul li ul li.first {
-    background: url("images/dropdown_sprite.png") no-repeat scroll 0 top transparent;
 }
 
 .tf_pagination .current,

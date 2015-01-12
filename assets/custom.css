@@ -39,3 +39,55 @@ your liking.
 #countdown .wrapper:last-child {
 	background: none;
 }
+
+#error, #message {
+	display: none;
+	color: white;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 390px;
+	margin: auto;
+}
+
+#error {
+	background-color: rgba(150, 0, 0, 0.3);
+}
+
+#message {
+	background-color: rgba(0, 150, 0, 0.3);
+}
+
+#rsvpd {
+	width: 400px;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: black;
+	margin: auto;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+#rsvpd li {
+	padding: 5px;
+	height: 25px;
+	text-align: left;
+}
+
+#rsvpd span {
+	display: block;
+	width: 90px;
+	float: left;
+}
+
+#rsvpd span:first-child {
+	width: 200px;
+	overflow: scroll;
+}
+
+#rsvpd span:last-child {
+	position: absolute;
+	right: 15px;
+}

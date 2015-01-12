@@ -33,6 +33,8 @@
 <script src="js/libs/modernizr-2.5.3.min.js"></script>
 <script src="js/libs/respond.min.js"></script>
 <script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/handlebars.min.js"></script>
+<script src="js/jquery.customInput.js"></script>
 <script src="js/countdown.js"></script>
 
 <!-- scripts  -->
@@ -107,6 +109,7 @@
             {{#if isRSVP}}{{> rsvpBody}}{{/if}}
             {{#if isRegistry}}{{> registryBody}}{{/if}}
             {{#if isGallery}}{{> galleryBody}}{{/if}}
+            {{#if isAdmin}}{{> adminBody}}{{/if}}
           </div>
           <!--/ content -->
 
@@ -120,6 +123,83 @@
      		<p class="copyright">The future estate of Cambi and Ben<span class="icon_heart">&hearts;</span> <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=Cambi%20%26%20Ben's%20Wedding&location=Mann%20Family%20Farm%2C%20605%20Horseshoe%20Hill%20Road%2C%20Bolinas%2C%20California%2094924&details=http%3A%2F%2Fwww.cambiandben.com&dates=20151023T230000Z/20151023T290000Z" target="_blank">October 23<sup>rd</sup> 2015</a></p>
   	</div>
   </footer>
+
+  <script id="guest-row-template" type="text/x-handlebars-template">
+    <li class="guest-row"><span>\{{email}}</span><span>\{{food}}</span><span>\{{#unless isGuest}}(<a href="#" class="delete-link" data-email="\{{email}}">delete</a>)\{{/unless}}</span></li>
+  </script>
+
+  <script id="rsvp-lookup-template" type="text/x-handlebars-template">
+    <form action= "#" method="post" id="email-lookup-form">
+
+       <div class="rowSubmit field_text aligncenter">
+         <label class="label_title"><strong>Email:</strong></label>
+         <input type="text" name="email" id="email" value="" class="inputtext input_middle required">
+       </div>
+
+       <div class="clear"></div>
+
+       <div class="row rowSubmit">
+       <input type="submit" id="rsvp-lookup" name="btnsubmit" value="Lookup Invite" class="btn-submit">
+       </div>
+    </form>
+  </script>
+
+  <script id="rsvp-update-template" type="text/x-handlebars-template">
+     <form action= "#" method="post" id="rsvp-update-form" style="display: none;">
+
+       <div class="row alignleft input_styled inlinelist omega" id="rsvp-attending">
+         <div class="rowRadio"><input type="radio" name="attending" value="yes" id="radio_v1" checked> <label for="radio_v1">YES, I AM ATTENDING</label></div>
+         <div class="rowRadio"><input type="radio" name="attending" value="no" id="radio_v2"> <label for="radio_v2">NO, I’M NOT ATTENDING</label></div>
+       </div>
+
+       <div id="rsvp-additional-questions">
+         <div class="row field_text alignleft">
+             <label class="label_title"><strong>First name:</strong></label>
+             <input type="text" name="fname" id="fname" value="" class="inputtext input_middle required">
+         </div>
+
+         <div class="row field_text alignleft omega">
+             <label class="label_title"><strong>Last name:</strong></label>
+             <input type="text" name="lname" id="lname" value="" class="inputtext input_middle required">
+         </div>
+
+         <div class="row alignleft input_styled inlinelist omega">
+           <div class="rowRadio"><input type="radio" name="food" value="beef" id="radio_v1" checked> <label for="radio_v1">BEEF</label></div>
+           <div class="rowRadio"><input type="radio" name="food" value="chicken" id="radio_v2"> <label for="radio_v2">CHICKEN</label></div>
+           <div class="rowRadio"><input type="radio" name="food" value="vegetarian" id="radio_v2"> <label for="radio_v2">VEGETARIAN</label></div>
+         </div>
+
+         <div class="clear"></div>
+
+         \{{#if plusOneAllowed}}
+
+         <div class="row field_text alignleft">
+             <label class="label_title"><strong>Guest First name:</strong></label>
+             <input type="text" name="guestfname" id="guestfname" value="" class="inputtext input_middle required">
+         </div>
+
+         <div class="row field_text alignleft omega">
+             <label class="label_title"><strong>Guest Last Name:</strong></label>
+             <input type="text" name="guestlname" id="guestlname" value="" class="inputtext input_middle required">
+         </div>
+
+         <div class="row alignleft input_styled inlinelist omega">
+           <div class="rowRadio"><input type="radio" name="guestfood" value="beef" id="radio_v1" checked> <label for="radio_v1">BEEF</label></div>
+           <div class="rowRadio"><input type="radio" name="guestfood" value="chicken" id="radio_v2"> <label for="radio_v2">CHICKEN</label></div>
+           <div class="rowRadio"><input type="radio" name="guestfood" value="vegetarian" id="radio_v2"> <label for="radio_v2">VEGETARIAN</label></div>
+         </div>
+         \{{/if}}
+       </div>
+
+       <div class="clear"></div>
+
+       <input type="hidden" name="email" value="\{{email}}" />
+
+       <div class="row rowSubmit">
+         <input type="submit" id="send" name="btnsubmit" value="RSVP NOW" class="btn-submit">
+       </div>
+    </form>
+  </script>
 
   </div>
 </body>
