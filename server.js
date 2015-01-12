@@ -131,13 +131,11 @@ Server.prototype.deleteGuest = function(req, res, next) {
 Server.prototype.lookupGuest = function(req, res, next) {
   var _this = this;
 
-  this._auth(req, res, next, function(auth) {
-    _this.rsvp.lookupGuest(req.params.email, function(err, guest) {
-      if (err) res.send(500, err.message);
-      else if (!guest) res.send(404, 'could not find invite for ' + req.params.email);
-      else res.send(200, guest);
-      return next();
-    });
+  _this.rsvp.lookupGuest(req.params.email, function(err, guest) {
+    if (err) res.send(500, err.message);
+    else if (!guest) res.send(404, 'could not find invite for ' + req.params.email);
+    else res.send(200, guest);
+    return next();
   });
 };
 
