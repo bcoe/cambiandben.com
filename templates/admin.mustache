@@ -1,0 +1,51 @@
+
+<h1>RSVP Admin:</h1>
+
+<p>Add guests to your RSVP list.</p>
+
+<ul id="rsvpd">
+</ul>
+<a href="/guest/csv" target="_blank">download guest list</a>
+
+<div id="error" class="error-message" style="display: none; background-color: rgba(150, 0, 0, 0.5);"></div>
+<div id="message" class="status-message" style="display: none; background-color: rgba(0, 150, 0, 0.5);"></div>
+
+<div class="clear"></div>
+</div>
+
+
+     <!-- add comment -->
+     <div class="add-comment contact-form">
+
+         <div class="comment-form">
+         <form action= "#" method="post" id="adminForm">
+
+            <div class="row rowSubmit field_text aligncenter">
+                 <label class="label_title"><strong>Email:</strong></label>
+                 <input type="text" name="email" id="email" value="" class="inputtext input_middle required">
+             </div>
+
+             <div class="clear"></div>
+
+
+             <div class="row alignleft input_styled inlinelist omega">
+               <div class="rowRadio"><input type="radio" name="plusone" value="yes" id="radio_v1" checked> <label for="radio_v1">+1 ALLOWED</label></div>
+               <div class="rowRadio"><input type="radio" name="plusone" value="no" id="radio_v2"> <label for="radio_v2">NO +1 ALLOWED</label></div>
+             </div>
+
+             <div class="clear"></div>
+
+             <div class="row rowSubmit">
+
+             <input type="hidden" name="auth" value="{{auth}}">
+             <input type="submit" id="send" name="btnsubmit" value="Add Guest" class="btn-submit">
+             </div>
+         </form>
+         </div>
+     </div>
+     <!--/add comment -->
+
+     <div class="divider_space_thin"></div>
+
+
+<script src="js/admin.js"></script>
