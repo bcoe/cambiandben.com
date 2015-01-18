@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   function lookupGuest(email) {
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: "/guest/" + email,
       dataType: 'json',
       success: function (guest) {

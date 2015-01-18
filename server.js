@@ -38,11 +38,6 @@ Server.prototype._createRoutes = function() {
   server.use(restify.bodyParser());
   server.use(restify.authorizationParser());
 
-  // serve static assets.
-  server.get(/\.[a-zA-Z]{1,5}/, restify.serveStatic({
-    directory: path.resolve(__dirname, './assets')
-  }));
-
   // serve the various mustache templates.
   server.get('/', function(req, res, next) { _this._serve({isIndex: true}, res, next); });
   server.get('/dayof', function(req, res, next) { _this._serve({isDayOf: true}, res, next); });
@@ -53,12 +48,17 @@ Server.prototype._createRoutes = function() {
   server.get('/admin', function(req, res, next) { _this.admin(req, res, next); });
 
   // RSVP guest-list management.
-  server.post('/guest/:email', function(req, res, next) { _this.lookupGuest(req, res, next); });
   server.post('/guest', function(req, res, next) { _this.addGuest(req, res, next); });
   server.del('/guest/:email', function(req, res, next) { _this.deleteGuest(req, res, next); });
   server.get('/guest', function(req, res, next) { _this.getGuests(req, res, next); });
   server.get('/guest/csv', function(req, res, next) { _this.getCSV(req, res, next); });
+  server.get('/guest/:email', function(req, res, next) { _this.lookupGuest(req, res, next); });
   server.put('/guest', function(req, res, next) { _this.updateGuest(req, res, next); });
+
+  // serve static assets.
+  server.get(/\.[a-zA-Z]{1,5}/, restify.serveStatic({
+    directory: path.resolve(__dirname, './assets')
+  }));
 };
 
 Server.prototype.admin = function(req, res, next) {
@@ -95,7 +95,7 @@ Server.prototype.updateGuest = function(req, res, next) {
       hasrsvpd: 'yes'
     }, req.params);
 
-  _this.rsvp.lookupGuest(req.params.email, function(err, guest) {
+  _this.rsvp.lookupGuest(req.params.email.toLowerCase(), function(err, guest) {
 
     if (err) {
       res.send(500, err.message);
