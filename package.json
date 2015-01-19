@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "prestart": "uglifyjs assets/js/libs/*.js assets/js/*.js > assets/js/combined.js; uglifycss ./assets/style.css ./assets/screen.css ./assets/custom.css ./assets/styles/*.css ./assets/css/*.css > ./assets/combined.css"
+    "prestart": "uglifyjs assets/js/libs/jquery.min.js assets/js/libs/*.js assets/js/*.js > assets/js/combined.js; uglifycss ./assets/style.css ./assets/screen.css ./assets/custom.css ./assets/styles/*.css ./assets/css/*.css > ./assets/combined.css"
   },
   "repository": {
     "type": "git",

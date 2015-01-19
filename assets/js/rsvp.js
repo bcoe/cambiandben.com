@@ -1,5 +1,7 @@
 // add new guests to the database.
 $(document).ready(function() {
+  if (window.location.href.indexOf('/admin') > -1) return;
+
   var rsvpLookupSource = $("#rsvp-lookup-template").html(),
     rsvpLookupTemplate = Handlebars.compile(rsvpLookupSource),
     rsvpUpdateSource = $('#rsvp-update-template').html(),
@@ -43,7 +45,7 @@ $(document).ready(function() {
     });
   }
 
-  $("#email-lookup-form").live("submit", function(event) {
+  $(".comment-form").on("submit", "#email-lookup-form", function(event) {
     var data = {};
 
     event.preventDefault();
@@ -56,7 +58,7 @@ $(document).ready(function() {
     lookupGuest(data.email);
   });
 
-  $('#rsvp-update-form').live("submit", function(event) {
+  $('.comment-form').on("submit", "#rsvp-update-form", function(event) {
     var data = {};
 
     event.preventDefault();
@@ -69,7 +71,7 @@ $(document).ready(function() {
     if (validateData(data)) updateGuest(data);
   });
 
-  $('#rsvp-attending input[name=attending]').live('change', function() {
+  $('.comment-form').on('change', '#rsvp-attending input[name=attending]', function() {
     var attending = $(this).val();
 
     if (attending === 'yes') $('#rsvp-additional-questions').slideDown('slow');
