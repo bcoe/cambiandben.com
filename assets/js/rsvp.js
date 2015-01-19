@@ -81,6 +81,7 @@ $(document).ready(function() {
   (function showEmailLookup() {
     var rendered = rsvpLookupTemplate();
     $('.comment-form').html(rendered);
+    setupTypeahead();
   })();
 
   function showForm(guest) {
@@ -106,4 +107,53 @@ $(document).ready(function() {
 
     return result;
   }
+
+  function setupTypeahead() {
+    // Create the engine, used to interact
+    // with our search backend.
+    var engine = new Bloodhound({
+      name: 'guests',
+      local: [],
+      remote: '/guest/search?q=%QUERY',
+      datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.val);
+      },
+      queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    engine.initialize();
+
+    // attach the typeahead extension to
+    // our search box using jQuery.
+    var typeahead = $('#typeahead-container .search-input').typeahead(
+      {
+        hint: true,
+        highlight: true,
+        minLength: 3
+      },
+      {
+        name: 'guests',
+        displayKey: 'value',
+        source: engine.ttAdapter(),
+        limit: 10
+      }
+    );
+
+    // if we hit enter, perform a search.
+    $('#search-container').on('keypress', function(event) {
+      if (event.keyCode == 13) {
+        $('#email-lookup-form').submit();
+      }
+    });
+
+
+    typeahead.on('typeahead:selected', function() {
+      $('#email-lookup-form').submit();
+    });
+
+    typeahead.on('typeahead:autocompleted', function() {
+      $('#email-lookup-form').submit();
+    });
+  }
+
 });
