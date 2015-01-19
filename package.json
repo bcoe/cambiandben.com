@@ -4,7 +4,8 @@
   "description": "the website for Cambi and Ben's wedding.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "prestart": "uglifyjs assets/js/libs/*.js assets/js/*.js > assets/js/combined.js; uglifycss ./assets/style.css ./assets/screen.css ./assets/custom.css ./assets/styles/*.css ./assets/css/*.css > ./assets/combined.css"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,9 @@
     "redis-url": "^0.3.1",
     "restify": "^2.8.4",
     "to-csv": "0.0.3"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.4.16",
+    "uglifycss": "0.0.11"
   }
 }
