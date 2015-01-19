@@ -158,7 +158,7 @@ Server.prototype.searchGuests = function(req, res, next) {
     return next();
   } else {
     this.rsvp.getGuests(function(err, guests) {
-      var guests = _.select(guests, function(g) {return g.email.indexOf(req.params.q) === 0;});
+      var guests = _.select(guests, function(g) {return g.email.indexOf(req.params.q.toLowerCase()) === 0;});
       res.send(200, _.map(guests, function(g) {
         return {
           value: g.email
