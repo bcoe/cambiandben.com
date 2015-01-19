@@ -51,6 +51,7 @@ Server.prototype._createRoutes = function() {
   server.post('/guest', function(req, res, next) { _this.addGuest(req, res, next); });
   server.del('/guest/:email', function(req, res, next) { _this.deleteGuest(req, res, next); });
   server.get('/guest', function(req, res, next) { _this.getGuests(req, res, next); });
+  server.get('/guest/search', function(req, res, next) { _this.searchGuests(req, res, next); })
   server.get('/guest/csv', function(req, res, next) { _this.getCSV(req, res, next); });
   server.get('/guest/:email', function(req, res, next) { _this.lookupGuest(req, res, next); });
   server.put('/guest', function(req, res, next) { _this.updateGuest(req, res, next); });
@@ -149,6 +150,22 @@ Server.prototype.getGuests = function(req, res, next) {
       return next();
     });
   });
+};
+
+Server.prototype.searchGuests = function(req, res, next) {
+  if (req.params.q.length < 3) { // don't return emails if you have entered less than 3 characters.
+    res.send(200, []);
+    return next();
+  } else {
+    this.rsvp.getGuests(function(err, guests) {
+      var guests = _.select(guests, function(g) {return g.email.indexOf(req.params.q) === 0;});
+      res.send(200, _.map(guests, function(g) {
+        return {
+          value: g.email
+        }
+      }));
+    });
+  }
 };
 
 Server.prototype.getCSV = function(req, res, next) {

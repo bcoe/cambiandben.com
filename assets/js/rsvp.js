@@ -1,5 +1,7 @@
 // add new guests to the database.
 $(document).ready(function() {
+  if (window.location.href.indexOf('/admin') > -1) return;
+
   var rsvpLookupSource = $("#rsvp-lookup-template").html(),
     rsvpLookupTemplate = Handlebars.compile(rsvpLookupSource),
     rsvpUpdateSource = $('#rsvp-update-template').html(),
@@ -43,7 +45,7 @@ $(document).ready(function() {
     });
   }
 
-  $("#email-lookup-form").live("submit", function(event) {
+  $(".comment-form").on("submit", "#email-lookup-form", function(event) {
     var data = {};
 
     event.preventDefault();
@@ -56,7 +58,7 @@ $(document).ready(function() {
     lookupGuest(data.email);
   });
 
-  $('#rsvp-update-form').live("submit", function(event) {
+  $('.comment-form').on("submit", "#rsvp-update-form", function(event) {
     var data = {};
 
     event.preventDefault();
@@ -69,7 +71,7 @@ $(document).ready(function() {
     if (validateData(data)) updateGuest(data);
   });
 
-  $('#rsvp-attending input[name=attending]').live('change', function() {
+  $('.comment-form').on('change', '#rsvp-attending input[name=attending]', function() {
     var attending = $(this).val();
 
     if (attending === 'yes') $('#rsvp-additional-questions').slideDown('slow');
@@ -79,6 +81,7 @@ $(document).ready(function() {
   (function showEmailLookup() {
     var rendered = rsvpLookupTemplate();
     $('.comment-form').html(rendered);
+    setupTypeahead();
   })();
 
   function showForm(guest) {
@@ -104,4 +107,53 @@ $(document).ready(function() {
 
     return result;
   }
+
+  function setupTypeahead() {
+    // Create the engine, used to interact
+    // with our search backend.
+    var engine = new Bloodhound({
+      name: 'guests',
+      local: [],
+      remote: '/guest/search?q=%QUERY',
+      datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.val);
+      },
+      queryTokenizer: Bloodhound.tokenizers.whitespace
+    });
+
+    engine.initialize();
+
+    // attach the typeahead extension to
+    // our search box using jQuery.
+    var typeahead = $('#typeahead-container .search-input').typeahead(
+      {
+        hint: true,
+        highlight: true,
+        minLength: 3
+      },
+      {
+        name: 'guests',
+        displayKey: 'value',
+        source: engine.ttAdapter(),
+        limit: 10
+      }
+    );
+
+    // if we hit enter, perform a search.
+    $('#search-container').on('keypress', function(event) {
+      if (event.keyCode == 13) {
+        $('#email-lookup-form').submit();
+      }
+    });
+
+
+    typeahead.on('typeahead:selected', function() {
+      $('#email-lookup-form').submit();
+    });
+
+    typeahead.on('typeahead:autocompleted', function() {
+      $('#email-lookup-form').submit();
+    });
+  }
+
 });

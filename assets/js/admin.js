@@ -61,13 +61,12 @@ $(document).ready(function() {
 
   fetchGuests(); // display the guestlist on load.
 
-  $('.delete-link').live('click',  function(event) {
+  $('#rsvpd').on('click', '.delete-link', function(event) {
     event.preventDefault();
 
     $.ajax({
       type: "DELETE",
       url: "/guest/" + $(this).data('email'),
-      dataType: 'json',
       success: function (guests) {
         fetchGuests();
       },
